@@ -23,6 +23,6 @@ class EmailAuditServiceProvider extends ServiceProvider
 
     public function register()
     {
-        // $this->app->register(EmailAuditServiceProvider::class);
+        //
     }
 }
