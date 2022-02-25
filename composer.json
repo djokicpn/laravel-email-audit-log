@@ -20,7 +20,7 @@
                 "Djokicpn\\LaravelEmailAuditLog\\EmailAuditServiceProvider"
             ],
             "aliases": {
-                "Debugbar": "Djokicpn\\LaravelEmailAuditLog\\Models\\EmailAudit"
+                "EmailAudit": "Djokicpn\\LaravelEmailAuditLog\\Models\\EmailAudit"
             }
         }
     },
