@@ -18,7 +18,10 @@
         "laravel": {
             "providers": [
                 "Djokicpn\\LaravelEmailAuditLog\\EmailAuditServiceProvider"
-            ]
+            ],
+            "aliases": {
+                "EmailAudit": "Djokicpn\\LaravelEmailAuditLog\\Models\\EmailAudit"
+            }
         }
     },
     "minimum-stability": "dev",
