@@ -26,7 +26,6 @@ class EmailAuditServiceProvider extends ServiceProvider
                 )
         ], 'email-audit-log-migrations');
 
-
         //Adding event listener for MessageSent
         Event::listen(MessageSent::class, EmailHasBeenSentListener::class);
     }
