@@ -16,7 +16,7 @@ class EmailAuditServiceProvider extends ServiceProvider
     public function boot()
     {
         //Loading views
-        $this->loadViewsFrom(__DIR__ . '/views', 'LaravelEmailAuditLog');
+        //$this->loadViewsFrom(__DIR__ . '/views', 'LaravelEmailAuditLog');
 
         //Publishing migration
         $this->publishes([
