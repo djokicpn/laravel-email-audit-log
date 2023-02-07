@@ -17,14 +17,22 @@ class EmailAuditServiceProvider extends ServiceProvider
     {
         //Loading views
         //$this->loadViewsFrom(__DIR__ . '/views', 'LaravelEmailAuditLog');
-
-        //Publishing migration
+//        Publishing migration
         $this->publishes([
-            __DIR__ . '/database/migrations/0000_00_00_000000_create_email_audit_log_table.php' =>
+            __DIR__ . '/database/migrations/2023_01_01_205101_djokicpn_create_email_audit_log_table.php' =>
                 $this->app->databasePath(
-                    '/migrations/' . now()->format('Y_m_d_His') . '_create_email_audit_log_table.php'
+                    '/migrations/2023_01_01_205101_djokicpn_create_email_audit_log_table.php'
                 )
         ], 'email-audit-log-migrations');
+
+        $this->publishes([
+            __DIR__ . '/database/migrations/2023_01_01_205102_djokicpn_add_user_id_to_log_table.php' =>
+                $this->app->databasePath(
+                    '/migrations/2023_01_01_205102_djokicpn_add_user_id_to_email_audit_log_table.php'
+                )
+        ], 'email-audit-log-migrations');
+
+        $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
 
         //Adding event listener for MessageSent
         Event::listen(MessageSent::class, EmailHasBeenSentListener::class);

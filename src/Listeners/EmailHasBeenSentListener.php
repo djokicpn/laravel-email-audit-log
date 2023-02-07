@@ -14,8 +14,10 @@ class EmailHasBeenSentListener
         $ccArr          = $this->parseAddresses($event->message->getCc());
         $from           = $event->message->getFrom()[0]->getAddress();
         $body           = $this->parseBodyText($event->message->getTextBody());
+        $user           = auth()->id() ?? NULL;
 
         EmailAudit::create([
+            'user_id'   => $user,
             'from'      => $from,
             'to'        => json_encode($toArr),
             'cc'        => $ccArr ? json_encode($ccArr) : NULL,
