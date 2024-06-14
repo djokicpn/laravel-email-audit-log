@@ -30,7 +30,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropForeign(['user_id']);
-        Schema::dropColumns(['user_id']);
+        Schema::table('email_audit_log', function (Blueprint $table) {
+            $table->dropForeign(['user_id']);
+            $table->dropColumn(['user_id']);
+        });
     }
 };
